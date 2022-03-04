@@ -1,2 +1,2 @@
 # node-project
-You have to 
+Node js connection to mangoDB using mongoose
