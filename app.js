@@ -1,15 +1,26 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const Message = require("./model/messages");
-require("dotenv").config();
+import express from 'express';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-const app = express();
-app.use(express.json());
+dotenv.config();
+const app =express();
+app.use(bodyParser.json());
+import blogsRoute from './routes/blogs.js';
+import loginRoute from './routes/auth.js';
 
-const port = 3001;
-const uri = process.env.MANGODB_CONNECTION_STRING;
+//ROUTES
+app.get('/', (req,res)=>{
+    res.send('We are on home');
+})
+app.use('/blogs', blogsRoute);
+app.use('/login', loginRoute);
 
-mongoose.connect(uri, {
+
+
+//Connection to DB
+
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -19,23 +30,5 @@ const connection =mongoose.connection;
 connection.once("open",()=>{
     console.log('Mango DB is connected sucessfully')
 });
-
-app.post("/message", async(req,res) =>{
-    try {
-     console.log("req.body: ",req.body);
-
-     const newMessage = new Message({
-         Email: req.body.Email,
-         Message: req.body.Message
-     });
-     
-     await Message.create(newMessage);
-     res.send("Message sent");
-    }catch(err){
-     console.log("error: ",err)
-    }
-})
-
-app.listen(port,()=>{
-    console.log(`App is listening at http://localhost${port}`)
-})
+//To listen the server
+app.listen(3000);
