@@ -35,7 +35,7 @@ router.delete('/:blogId',verify, async(req,res)=>{
         res.json({message:err});
     }
     });
-//To delete a post
+//To update a post
 router.patch('/:blogId',verify, async (req,res)=>{
     try{
         await Blog.updateOne({_id: req.params.blogId}, {$set: {Title: req.body.Title,Body:req.body.Body}});
