@@ -7,7 +7,7 @@ import verify from '../verify.js';
 
 
 //To get all blogs
-router.get('/',verify, async(req, res)=>{
+router.get('/', async(req, res)=>{
     try{
      const blogs = await Blog.find();
      res.json(blogs);
@@ -17,7 +17,7 @@ router.get('/',verify, async(req, res)=>{
 });
 
 //To get one specific blog
-router.get('/:blogId',verify, async(req,res)=>{
+router.get('/:blogId', async(req,res)=>{
    try{
         const blog = await Blog.findById(req.params.blogId);
         res.json(blog);
