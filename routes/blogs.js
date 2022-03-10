@@ -7,7 +7,7 @@ import verify from '../verify.js';
 
 
 //To get all blogs
-router.get('/',verify, async(req, res)=>{
+router.get('/', async(req, res)=>{
     try{
      const blogs = await Blog.find();
      res.json(blogs);
@@ -17,7 +17,7 @@ router.get('/',verify, async(req, res)=>{
 });
 
 //To get one specific blog
-router.get('/:blogId',verify, async(req,res)=>{
+router.get('/:blogId', async(req,res)=>{
    try{
         const blog = await Blog.findById(req.params.blogId);
         res.json(blog);
@@ -35,7 +35,7 @@ router.delete('/:blogId',verify, async(req,res)=>{
         res.json({message:err});
     }
     });
-//To delete a post
+//To update a post
 router.patch('/:blogId',verify, async (req,res)=>{
     try{
         await Blog.updateOne({_id: req.params.blogId}, {$set: {Title: req.body.Title,Body:req.body.Body}});
