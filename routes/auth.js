@@ -11,6 +11,7 @@ import jwt from 'jsonwebtoken';
         Email: Joi.string()
         .required()
         .email(),
+        Names: Joi.string(),
         Password: Joi.string()
         .min(6)
         .required()
@@ -18,23 +19,27 @@ import jwt from 'jsonwebtoken';
   
 
 router.get('/', (req,res)=>{
-    res.send('We are on login');
+    res.sendStatus(200)
 })
 
-// router.post('/register',  async(req,res)=>{
-//     try {
-//         console.log("req.body: ",req.body);
-//     const addAdmin = new Admin({
-//         Names:req.body.Names,
-//         Email: req.body.Email,
-//         Password: req.body.Password,
-//     })
-//     await Admin.create(addAdmin);
-//     res.send("Admin created");
-//    }catch(err){
-//     console.log("error: ",err)
-//    }
-// })
+ router.post('/register',  async(req,res)=>{
+     try {
+      //VALIDATE THE DATA
+    const {error} = Joi.validate(req.body, schema);;
+    if(error) return res.status(400).send(error.details[0].message);
+         console.log("req.body: ",req.body);
+     const addAdmin = new Admin({
+         Names:req.body.Names,
+         Email: req.body.Email,
+         Password: req.body.Password,
+     })
+     await Admin.create(addAdmin);
+     res.send("Admin created");
+     res.sendStatus(200)
+    }catch(err){
+     console.log("error: ",err)
+    }
+ })
 
 router.post('/', async(req, res)=>{
 
