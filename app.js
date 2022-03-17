@@ -10,9 +10,9 @@ import blogsRoute from './routes/blogs.js';
 import loginRoute from './routes/auth.js';
 
 //ROUTES
-app.get('/', (req,res)=>{
-    res.send('We are on home');
-})
+app.get("/", function (req, res) {
+  res.send("We are on home!!!");
+});
 app.use('/blogs', blogsRoute);
 app.use('/login', loginRoute);
 
