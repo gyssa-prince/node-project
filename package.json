@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "nodemon --exec ./node_modules/.bin/babel-node app.js",
-    "start": "--exec ./node_modules/.bin/babel-node app.js"
+    "start": "app.js"
   },
   "author": "Gyssagara",
   "license": "ISC",
@@ -19,12 +19,12 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.8.5",
-        "@babel/core": "^7.17.5",
-    "@babel/node": "^7.16.8",
-    "@babel/preset-env": "^7.16.11"
+    "mongoose": "^5.8.5"   
   },
   "devDependencies": {
+     "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11"
     "nodemon": "^2.0.15"
   }
 }
