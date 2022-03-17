@@ -31,4 +31,4 @@ connection.once("open",()=>{
     console.log('Mango DB is connected sucessfully')
 });
 //To listen the server
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
