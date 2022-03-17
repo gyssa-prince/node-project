@@ -4,6 +4,9 @@
   "description": "",
   "type": "module",
   "main": "app.js",
+   "engines": {
+    "npm": "6.11.3"
+  },
   "scripts": {
     "dev": "nodemon --exec ./node_modules/.bin/babel-node app.js",
     "start": "./app.js"
