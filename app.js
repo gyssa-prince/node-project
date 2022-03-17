@@ -11,7 +11,7 @@ import loginRoute from './routes/auth.js';
 
 //ROUTES
 app.get('/', (req,res)=>{
-    res.send('We are on home');
+    res.send('We are on home now');
 })
 app.use('/blogs', blogsRoute);
 app.use('/login', loginRoute);
