@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "node app.js",
+  "main": "app.js",
    "engines": {
     "npm": "8.x"
   },
