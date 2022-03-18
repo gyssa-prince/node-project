@@ -17,7 +17,7 @@ app.all('/', function(req, res, next) {
   });
 
 //ROUTES
-app.get("/", function (req, res) {
+app.get("/", function (req, res, next) {
   res.send("We are on home!!!");
 });
 app.use('/blogs', blogsRoute);
