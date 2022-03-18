@@ -2,10 +2,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors'
 
 dotenv.config();
 const app =express();
 app.use(bodyParser.json());
+app.use(cors());
 import blogsRoute from './routes/blogs.js';
 import loginRoute from './routes/auth.js';
 
