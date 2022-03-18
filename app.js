@@ -9,6 +9,12 @@ app.use(bodyParser.json());
 import blogsRoute from './routes/blogs.js';
 import loginRoute from './routes/auth.js';
 
+//Enable CORS
+res.set({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+    });
+
 //ROUTES
 app.get("/", function (req, res) {
   res.send("We are on home!!!");
