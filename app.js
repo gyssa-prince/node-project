@@ -20,6 +20,9 @@ app.all('/', function(req, res, next) {
 app.get("/", function (req, res, next) {
   res.send("We are on home!!!");
 });
+  app.post('/', function(req, res, next) {
+    // Handle the post for this route
+  })
 app.use('/blogs', blogsRoute);
 app.use('/login', loginRoute);
 
