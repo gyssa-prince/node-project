@@ -43,15 +43,13 @@ router.get('/', (req,res)=>{
 
 router.post('/', async(req, res)=>{
 
-    //VALIDATE THE DATA
-    const {error} = Joi.validate(req.body, schema);;
-    if(error) return res.status(400).send(error.details[0].message);
+
     //Checking the email exist in database 
     const admin = await Admin.findOne({Email: req.body.Email});
-    if(!admin) return res.status(400).send('Emai is not found');
+    if(!admin) return res.status(400).send('Emai or password is not correct');
     //if password is correct
     const validPass = await Admin.findOne({Email:req.body.Email,Password:req.body.Password});
-    if(!validPass) return res.status(400).send('Invalid password');
+    if(!validPass) return res.status(400).send('Emai or password is not correct');
       
     //create and assign a token
     const token = jwt.sign({_id: admin._id}, process.env.TOKEN_SECRET)
