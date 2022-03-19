@@ -13,7 +13,7 @@ import loginRoute from './routes/auth.js';
 
 //ROUTES
 app.get("/", function (req, res) {
-  res.send("We are on home!!!");
+  res.send("We are on home!!!").status(200);
 });
 
 app.use('/blogs', blogsRoute);
