@@ -49,7 +49,7 @@ router.post('/', async(req, res)=>{
     if(!admin) return res.status(400).send('Emai or password is not correct');
     //if password is correct
     const validPass = await Admin.findOne({Email:req.body.Email,Password:req.body.Password});
-    if(!validPass) return res.status(400).send('Emai or password is not correct');
+    if(!validPass) return res.status(400).send('Email or password is not correct');
       
     //create and assign a token
     const token = jwt.sign({_id: admin._id}, process.env.TOKEN_SECRET)
