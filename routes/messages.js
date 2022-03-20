@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router();
 import Joi from '@hapi/joi';
 import Message from '../models/messages.js';
+import verify from '../verify.js';
 
 
 const schema = {
