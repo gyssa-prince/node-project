@@ -13,7 +13,7 @@ const schema = {
 };
 
 //get messages
-router.get('/', async(req, res)=>{
+router.get('/',verify, async(req, res)=>{
     try{
      const messages = await Message.find();
      res.json(messages);
