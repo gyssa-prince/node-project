@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 import blogsRoute from './routes/blogs.js';
 import loginRoute from './routes/auth.js';
+import messageRoute from './routes/messages.js';
 
 //ROUTES
 app.get("/", function (req, res) {
