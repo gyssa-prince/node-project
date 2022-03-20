@@ -18,6 +18,7 @@ app.get("/", function (req, res) {
 
 app.use('/blogs', blogsRoute);
 app.use('/login', loginRoute);
+app.use('/message', messageRoute);
 
 
 
