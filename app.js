@@ -11,7 +11,7 @@ app.use(cors());
 import blogsRoute from './routes/blogs.js';
 import loginRoute from './routes/auth.js';
 import messageRoute from './routes/messages.js';
-import subcribeRoute from './routes/subcribe.js'
+import subcribeRoute from './routes/subcribe.js';
 
 
 //ROUTES
