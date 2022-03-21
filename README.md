@@ -9,3 +9,8 @@ Restfull Node js API
 MANGODB_CONNECTION_STRING=mongodb+srv://username:password@cluster0.hrqkg.mongodb.net/Capstone?retryWrites=true&w=majority
 TOKEN_SECRET=a@0na78#
 *check the documentation to find out all about the routes and more info
+![](https://img.shields.io/badge/Coverage-100%25-83A603.svg?prefix=$coverage$)
+![](https://img.shields.io/badge/Coverage-100%25-83A603.svg?prefix=$statements$)
+![](https://img.shields.io/badge/Coverage-100%25-83A603.svg?prefix=$branches$)
+![](https://img.shields.io/badge/Coverage-100%25-83A603.svg?prefix=$functions$)
+![](https://img.shields.io/badge/Coverage-99%25-83A603.svg?prefix=$lines$)
