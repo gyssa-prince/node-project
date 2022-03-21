@@ -1,3 +1,9 @@
+![](https://img.shields.io/badge/Coverage-88%25-83A603.svg?prefix=$coverage$)
+![](https://img.shields.io/badge/Branches-90%25-83A603.svg?prefix=$statements$)
+![](https://img.shields.io/badge/Functions-86%25-83A603.svg?prefix=$branches$)
+![](https://img.shields.io/badge/Lines-82%25-83A603.svg?prefix=$functions$)
+![](https://img.shields.io/badge/Statements-93%25-83A603.svg?prefix=$lines$)
+
 # node-project
 Restfull Node js API
 
