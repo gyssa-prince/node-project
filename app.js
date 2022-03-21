@@ -11,16 +11,17 @@ app.use(cors());
 import blogsRoute from './routes/blogs.js';
 import loginRoute from './routes/auth.js';
 import messageRoute from './routes/messages.js';
+import subcribeRoute from './routes/subcribe.js';
+
 
 //ROUTES
-app.get("/", function (req, res) {
-  res.send("We are on home!!!").status(200);
-});
-
+app.get('/', (req,res)=>{
+    res.send('We are on home');
+})
 app.use('/blogs', blogsRoute);
 app.use('/login', loginRoute);
 app.use('/message', messageRoute);
-
+app.use('/subcribe', subcribeRoute);
 
 
 //Connection to DB
