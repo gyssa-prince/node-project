@@ -47,14 +47,12 @@ router.delete('/:blogId',verify, async(req,res)=>{
     });
 //To update a post
 router.patch('/:blogId',verify, async (req,res)=>{
-    if(blog!=null){try{
+    try{
         await Blog.updateOne({_id: req.params.blogId}, {$set: {Title: req.body.Title,Body:req.body.Body}});
         res.json("Blog updated");
     }catch(err){
         res.json({message:err});
         res.status(501);
-    }}else{
-        res.sendStatus(404);
     }
 })
 
