@@ -36,7 +36,7 @@ if(error) return res.status(400).send(error.details[0].message);
  res.status(201);
 }catch(err){
  console.log("error: ",err)
- res.status(503);
+ res.status(503)
 }
 })
 export default router;
