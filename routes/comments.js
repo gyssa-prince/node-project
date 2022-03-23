@@ -11,10 +11,10 @@ const schema = {
     .required(),
 };
 
-//get messages
+//get comments
 router.get('/:Blogid', async(req, res)=>{
     try{
-    var postId = { Blogid: req.params.blogId};
+    var postId = { Blogid: req.params.Blogid };
      const comments =await Comment.find(postId);
      res.send(comments);
     }catch(err){
