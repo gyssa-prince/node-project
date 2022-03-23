@@ -33,10 +33,10 @@ if(error) return res.status(400).send(error.details[0].message);
      Comment: req.body.Comment
  })
  await Comment.create(AddComment);
- res.status(201);
+ res.sendStatus(201);
 }catch(err){
  console.log("error: ",err)
- res.status(503)
+ res.status(503);
 }
 })
 export default router;
