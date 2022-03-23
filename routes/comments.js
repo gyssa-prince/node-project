@@ -14,7 +14,7 @@ const schema = {
 //get messages
 router.get('/:Blogid', async(req, res)=>{
     try{
-    var postId = { Blogid: "62272dc80d6e2b3f14868562" };
+    var postId = { Blogid: req.params.blogId};
      const comments =await Comment.find(postId);
      res.send(comments);
     }catch(err){
