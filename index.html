@@ -1,0 +1,219 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Gyssa</title>
+     <link rel="stylesheet" href="css/style.css">
+ </head>
+ <body>
+ <header>
+     <a href="#" class="logo">GYS<span class="blue">S</span><span class="green">A</span></a>
+     <img src="img/toggle.png" height="20px"s="bx bx-menu" id="menu-icon"></div>
+     <ul class="navbar">
+         <li><a href="#home" >Home</a></li>
+         <li><a href="#about">About me</a></li>
+         <li><a href="blog/index.html">Blog</a></li>
+         <li><a href="#footer">Contact me</a></li>
+     </ul>
+ </header>
+ <section class="home" id="home">
+ <div class="home-text">
+     <h1>Welcome to my website,<br><span class="serve">I am here to serve you.</span>
+    </h1>
+     <p><span class="gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( “</span><span class="htext">Design is not just what </span><span class="gray">it looks like and feels like. Design</span><br><span class="htext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is how it works." -Steve Jobs</span><span class="gray">. )</span><br><br><br>
+     <a href="mailto:gyssatechnologies@gmail.com" class="btn">REACH TO ME</a>
+ </div>
+ </section>
+ <h3 align="center" class="aboutH">About Me</h3>
+ <section class="about" id="about">
+     <div class="about-img">
+         <img src="img/engineer.JPG" alt="Engineer">
+         </div>
+         <div class="about-text">
+             <h4 style="font-size: 0.98rem;">GYSSAGARA PRINCE</h4>
+             <p>Hey, I'm GYSSAGARA Prince, a full stack sofware developer based
+                 in Kigali, Rwanda with 2+ years of experience,
+                 I likes to be challanged with new projects, because I think is
+                 the best way to increase my knowledge as an engineer .<br>
+                 I am also a content creater, I make blogs on Technological tricks.
+                 <br><br><br>
+                 <a href="#" class="btn">Hire Me.</a>
+         </div>
+     </div>
+ </section>
+ <section class="tools">
+    <div class="heading">
+        <h2 style="color: #ffff;">Tools</h2>
+    </div>
+    <div class="tools-container">
+        <img src="img/html.png" alt="">
+        <img src="img/css.png" height="105px" alt="">
+        <img src="img/Bootstrap_logo.svg.png" alt="">
+        <img src="img/php.png" alt="">
+        <img src="img/sql.png" alt="">
+    </div>
+</section>
+    <h3 align="center" class="projectsH">Recent projects</h3>
+<section class="projects">
+    <div class="projects-img">
+        <h3>Project 3</h3>
+        <img src="img/project3.png" alt="software development icon">
+        <div class="projects-text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <br>Dolores veritatis ad blanditiis molestias sunt aspernatur.&nbsp;&nbsp; <a href="#"><i>Check it out</i></a></p>
+        </div>
+    </div>
+
+    <div class="projects-img">
+        <h3>Project 2</h3>
+        <img src="img/project2.jpg" alt="search Optimization icon">
+        <div class="projects-text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <br>Dolores veritatis ad blanditiis molestias sunt aspernatur.&nbsp;&nbsp; <a href="#"><i>Check it out</i></a></p>
+        </div>  
+    </div>
+
+    <div class="projects-img">
+        <h3>Project 1</h3>
+        <img src="img/project1.jpg" alt="software maintenance icon">
+        <div class="projects-text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <br>Dolores veritatis ad blanditiis molestias sunt aspernatur. &nbsp;&nbsp; <a href="#"><i>Check it out</i></a></p>
+        </div>
+    </div>
+</section>  
+ <section class="footer" id="footer">
+ <div class="subcribe-area">
+    <a href="#" class="logo">GYS<span class="blue">S</span><span class="green">A</span></a>
+    <br>
+    <p>Our approach is to digitalize<br>
+    and introduce new technologies.</p>
+    <br>
+     <h3>Subscribe To Newsletter</h3>
+     <form id="subscribeForm"> <input type="email" name="email" id="subscribing" placeholder="Enter your email" class="text-A" required><input type="submit" name="subscribe" id="subscri" value="Subscribe" class="btn">
+     </form></div>
+    <div class="company">
+        <h3>SEND A MESSAGE</h3>
+        <form id="messageForm">
+        <input type="email" id="email" name="email" placeholder="Email" style="width: 250px;padding:3px;border: 1px solid rgb(5, 5, 5);border-radius: 4px;" required>
+       <br><textarea id="subject" name="subject" placeholder="Write your message.." style="height:100px;width: 250px;padding:8px;border: 1px solid #ccc;border-radius: 4px;" required></textarea><br>
+        <input type="submit" value="Send" id="submit" name="submit" class="btn">
+    </form>
+    </fieldset>
+    </div>
+    
+    <div class="contact">
+        <h3>CONTACT</h3>
+        <p>Kigali City,Rwanda<br>
+        +250785364200<br>
+    gyssatechnologies@gmail.com<br>
+   <a href="https://twitter.com/gyssa-prince"> <img src="img/tw2.png" width="20px"></a>&nbsp;<a href=""><img src="img/lin2.png" width="20px"></a>&nbsp;<a href="https://www.instagram.com/prince_gyssa"><img src="img/ins2.png" width="20px"></a></p>
+</section>
+    <h4 align="center" style="background-color:#ffff;">&#169;GYSSA TECHONOLOGIES All Right Reserved</h4>
+    <script>
+        
+        let Email =document.getElementById("email");
+        let Subs = document.getElementById("subscribing")
+        let Message =document.getElementById("subject");
+
+        let Subscribe =document.getElementById("subscribing");
+        
+        let Send  = document.getElementById("submit");
+        let Subsc  = document.getElementById("subscri");
+
+        //Adding documents
+
+        async function Sendmessage (){
+     const email = Email.value;
+     const message = Message.value;
+     const MessageForm = document.getElementById("messageForm");
+await fetch('https://gyssablog.herokuapp.com/message',{
+method: "POST",
+headers:{
+    'Content-Type': 'application/json'
+},
+body: JSON.stringify({
+Email:email,
+Message:message
+})
+}).then(response => response.text())
+.then(alert ("Message sent"))
+MessageForm.reset();
+}
+Send.addEventListener("click",Sendmessage)
+
+async function subscribe (){
+     const email = Subs.value;
+     const SubscribeForm = document.getElementById("subscribeForm");
+await fetch('https://gyssablog.herokuapp.com/subcribe',{
+method: "POST",
+headers:{
+    'Content-Type': 'application/json'
+},
+body: JSON.stringify({
+Email:email
+})
+}).then(response => response.text())
+.then(alert ("Thank you for subscribing"))
+SubscribeForm.reset();
+}
+Subsc.addEventListener("click",subscribe)
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+        async function Subscrib(){
+            var ref = collection(db,"Subscribers");
+
+            const docRef = await addDoc(
+                ref, {
+                    Email: Subs.value,
+                    Date_time: time,
+                }
+            )
+            .then(() => {
+                alert("Thanks, you will be notified for the latest");
+            }).catch((error)=> {
+                alert ("Subscription failed"+error);
+            });
+        }
+
+
+*/
+        //Assign event to button
+
+        Subsc.addEventListener("click",Subscrib)
+      
+      //date
+
+      
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+    const dateObj = new Date();
+    const month = monthNames[dateObj.getMonth()];
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const year = dateObj.getFullYear();
+    const output = month  + '\n'+ day  + ',' + year;
+    var d = new Date(); // for now
+let a=d.getHours(); // => 9
+let b=d.getMinutes(); // =>  30
+let c=d.getSeconds(); // => 51
+ let time=output +" "+ a +":"+ b+":"+ c
+
+      </script>
+    <script src="main.js"></script>
+
+</body>
+</html>

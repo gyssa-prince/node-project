@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script> -->
+    <title>gyssa's blog</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="#">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo">GYS<span class="blue">S</span><span class="green">A</span></a>
+        <img src="../img/toggle.png" height="20px" class="bx-menu" id="menu-icon"></div>
+        <ul class="navbar1">
+            <li><a href="../index.html#home" >Home</a></li>
+            <li><a href="../index.html#about">About me</a></li>
+            <li><a href="blog/index.html"><span>Blog</span></a></li>
+            <li><a href="#footer">Contact me</a></li>
+            <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+        </ul>
+    </nav>
+    <section id="blog">
+        <div class="search" style="display:none;"><input type="text" name="title" placeholder="Search here" class="inpt"><input type="submit" name="search" value="Search" class="sbtn"></div>
+    <header>
+        <ul class="navbar">
+            <li><a href="#home" >Scientific facts</a></li>
+            <li><a href="#about">Amazing tricks</a></li>
+            <li><a href="blog/index.html">Did you know</a></li>
+            <li><a href="#footer">Vast Ideas</a></li>
+            <li> <input type="text" name="title" placeholder="Search here" class="inpt"><input type="submit" name="search" value="Search" class="sbtn"> </li>
+        </ul>
+    </header>
+    <div class="search">
+   </div>
+    <div class="blog-container" id="blog-container">
+       
+                </div>
+
+               
+
+    </section>
+    <section class="footer" id="footer">
+        <div class="subcribe-area">
+           <h3>&nbsp;&nbsp;&nbsp; GYS<span class="blue">S</span><span class="green">A</span></h3>
+           <br>
+           <p>&nbsp;&nbsp;&nbsp; Let's connect through Big Ideas<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;and share thoughts.</p>
+           <br>
+            <h3>&nbsp;&nbsp;&nbsp;Subscribe To Newsletter</h3>
+            &nbsp;&nbsp;&nbsp;<input type="email" name="email" id="subscribing" placeholder="Enter your email" class="text-A" required><input type="submit" name="subscribe" id="subscri" value="Subscribe" class="btn">
+        </div>
+           <div class="company">
+               <h3>SEND AN IDEA</h3>
+               <input type="email" id="email" name="email" placeholder="Email" style="width: 250px;padding:3px;border: 1px solid rgb(5, 5, 5);border-radius: 4px;" required>
+       <br><textarea id="subject" name="subject" placeholder="Write your message.." style="height:100px;width: 250px;padding:8px;border: 1px solid #ccc;border-radius: 4px;" required></textarea><br>
+        <input type="submit" value="Send" id="submit" name="submit" class="btn">
+    </fieldset>
+           </div>
+           
+           <div class="contact">
+               <h3>CONTACT</h3>
+               <p>Kigali City,Rwanda<br>
+               +250785364200<br>
+           gyssatechnologies@gmail.com<br>
+          <a href="https://twitter.com/gyssa-prince"> <img src="img/tw2.png" width="20px"></a>&nbsp;<a href=""><img src="img/lin2.png" width="20px"></a>&nbsp;<a href="https://www.instagram.com/prince_gyssa"><img src="img/ins2.png" width="20px"></a></p>
+       </section>
+           <h4 align="center" style="background-color:#ffff;">&#169;GYSSA TECHONOLOGIES All Right Reserved</h4>
+           <!-- <script src="../firebase.js"></script> -->
+           <script src="js/blog.js"></script>
+           <!-- <script src="main.js"></script> -->
+        </body>
+</html>
+<script type="module">
+  /*  // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAooC6GZdOow4Ua5laOURlRDzUnpQb8Ih8",
+      authDomain: "personal-web-6f353.firebaseapp.com",
+      projectId: "personal-web-6f353",
+      storageBucket: "personal-web-6f353.appspot.com",
+      messagingSenderId: "137010214646",
+      appId: "1:137010214646:web:295d000efc7550352aded7"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    import {
+        getFirestore, doc,getDoc,setDoc, collection, addDoc, serverTimestamp, updateDoc, deleteDoc, deleteField
+    } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
+
+    const db= getFirestore();
+
+    // reference
+
+    let Email =document.getElementById("email");
+    let Subs = document.getElementById("subscribing")
+    let Message =document.getElementById("subject");
+
+    let Subscribe =document.getElementById("subscribing");
+    
+    let Send  = document.getElementById("submit");
+    let Subsc  = document.getElementById("subscri");
+
+    //Adding documents
+
+    async function AddDocument_AutoID(){
+        var ref = collection(db,"Messages");
+
+        const docRef = await addDoc(
+            ref, {
+                Email: Email.value,
+                Message: Message.value,
+                Date_time: time,
+            }
+        )
+        .then(() => {
+            alert("Message sent sucessfully");
+        }).catch((error)=> {
+            alert ("Message not sent !!!"+error);
+        });
+    }
+
+    async function Subscrib(){
+        var ref = collection(db,"Subscribers");
+
+        const docRef = await addDoc(
+            ref, {
+                Email: Subs.value,
+                Date_time: time,
+            }
+        )
+        .then(() => {
+            alert("Thanks, you will be notified for the latest");
+        }).catch((error)=> {
+            alert ("Subscription failed"+error);
+        });
+    }
+
+
+
+    //Assign event to button
+
+    Send.addEventListener("click",AddDocument_AutoID)
+    Subsc.addEventListener("click",Subscrib)
+*/  
+  //date
+
+  
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+const dateObj = new Date();
+const month = monthNames[dateObj.getMonth()];
+const day = String(dateObj.getDate()).padStart(2, '0');
+const year = dateObj.getFullYear();
+const output = month  + '\n'+ day  + ',' + year;
+var d = new Date(); // for now
+let a=d.getHours(); // => 9
+let b=d.getMinutes(); // =>  30
+let c=d.getSeconds(); // => 51
+let time=output +" "+ a +":"+ b+":"+ c
+
+  </script>

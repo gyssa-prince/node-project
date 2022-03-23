@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="dashstyle.css">
+    <script>
+        if (localStorage.getItem("auth-token") === null) {
+            window.location.href="login.html";
+        }
+    </script>
+
+	<title>Dashboard</title>
+</head>
+<body>
+    <section id="sidebar">
+		<a href="#" class="brand">
+        <i class='bx bx-home-circle'></i>
+		<span class="text">GYSSA</span>
+		</a>
+        <ul class="side-menu top">
+            <li>
+                <a href="#" class="posts">
+                    <i class='bx bxs-doughnut-chart' ></i>
+				<span class="post">Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="messages">
+                    <i class='bx bxs-message-dots' ></i>
+				<span class="msg">Messages</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="subscribers">
+                    <i class='bx bxs-group' ></i>
+				<span class="subs">Subscribers</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="dashboard">
+                <i class='bx bx-pulse'></i>
+				<span class="acts">Activities</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="subscribers">
+                    <i class='bx bx-export'></i>
+				<span class="addp">Add a Post</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="subscribers">
+                
+				<span class="text"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="subscribers">
+                    <i class='bx bxs-cog' ></i>
+				<span class="text">Change password</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bxs-log-out-circle' ></i>
+				<span class="text" id="logout">Log out</span>
+                </a>
+            </li>
+        </ul>
+</section>
+<section id="content">
+    <!-- NAVBAR -->
+    <nav>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<form action="#">
+        <div class="inpt">
+               <input type="search" class="inptt" placeholder="Search...">
+                <button type="submit" class="sbtn"><i class='bx bx-search' ></i></button>
+            </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden>
+        <label for="switch-mode" class="switch-mode"></label>
+        <a href="#" class="notification">
+         Notifications   <i class='bx bxs-bell' ><span class="num"><sup>3</sup></span></i>
+            
+        </a>
+        <a href="#" class="profile">
+          <img src="../img/engr.jpg">
+        </a>
+    </nav>
+    </section>
+    <main>
+        <div class="table-data">
+            <div class="messages">
+                <div class="head">
+                    <h3 align="center">Recent Messages</h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Email </th>
+                            <th>Message&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tb1"></tbody>
+                            <script src="./js/messages.js"></script>
+                </table>
+            </div>
+    
+
+                    </div>
+                    <div class="table2-data">
+                        <div class="subscribers">
+                            <div class="head">
+                                <h3 align="center">Subscribers</h3>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Email</th>
+                                        <th>Date </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tb2"></tbody>
+                                    <script src="./js/subscribe.js"></script>
+                            </table>
+                        </div>
+
+                        </div>
+                        
+                    <div class="blog-container1">
+                        <div class="subscribers">
+                            <div class="head">
+                            <h3 align="center">All posts</h3>
+                        </div>
+                        </div>
+                        <table class="P">
+                            <thead>
+                                <tr>
+                                    <th>Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                    <th>Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+                                    <th>Author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+                                    <th>Control&nbsp;&nbsp;&nbsp;&nbsp; </th>
+                                
+                                </tr>
+                                </thead>
+                                <tbody id="tb3"></tbody>
+                        </table>
+                    </div>
+                                    </div>
+                               
+                                
+      <div class="Add-post">
+          <a href="">Upload a blog</a>
+          <form id="postin">
+          <div class="post">
+          <input type="text" name="title" id="title" placeholder="Enter Article header......"><br>
+          <textarea name="description" id="description" class="Art_intro" placeholder="Enter Article descriptions.........."></textarea><br>
+          <label> <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required style="display:none"><label>Add an image</label><strong><div class="iconimg"><i class='bx bxs-image-add'></i></div></strong></label>
+           <input type="submit" class="addpost" id="AddPost" value="Add Post">
+        </form>
+           
+        </div>
+      </div>
+
+      <div class="Edit-post" id="Edit-post">
+        <a href="">Update a blog</a>
+        <form id="updatin">
+        <div class="post">
+        <input type="text" name="titles" id="titles"><br>
+        <textarea name="descriptions" id="descriptions" class="Art_intro" ></textarea><br>
+        <label> <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required style="display:none"><label>Add an image</label><strong><div class="iconimg"><i class='bx bxs-image-add'></i></div></strong></label>
+         <input type="submit" class="editpost" id="UpdatePost" value="Update Post">
+      </form>
+         
+      </div>
+    </div>
+
+      <div class="table3-data">
+        <div class="subscribers">
+            <div class="head">
+                <h3 align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Recent Activities</h3><br>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Date </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Uploaded a blog
+                        </td>
+                        <td>01-10-2021</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Edited a blog
+                        </td>
+                        <td>01-10-2021</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Uploaded a blog
+                        </td>
+                        <td>01-10-2021</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Deleted a blog
+                        </td>
+                        <td>01-10-2021</td>
+                    </tr>
+            </table>
+        </div>
+
+        </div>
+
+    </div>                    
+    </main>
+    <script>
+        const msg = document.getElementsByClassName('msg')[0]
+        const messages =document.getElementsByClassName('table-data')[0]
+        const post = document.getElementsByClassName('post')[0]
+        const posts = document.getElementsByClassName('blog-container1')[0]
+        const addp = document.getElementsByClassName('addp')[0]
+        const Token =(location.hash).slice(1);
+        const addpost = document.getElementsByClassName('Add-post')[0]
+        const subs = document.getElementsByClassName('subs')[0]
+        const subscribers = document.getElementsByClassName('table2-data')[0]
+        const acts = document.getElementsByClassName('acts')[0]
+        const Activities = document.getElementsByClassName('table3-data')[0]
+       msg.addEventListener('click', () =>{
+        posts.style.display="none";
+        subscribers.style.display="none";
+        addpost.style.display="none";
+        Activities.style.display="none";
+        messages.style.display="flex";
+        })
+
+        post.addEventListener('click', () =>{
+        posts.style.display="flex";
+        addpost.style.display="none";
+        Activities.style.display="none";
+        messages.style.display="none";
+        subscribers.style.display="none";
+        })
+
+        addp.addEventListener('click', () =>{
+        posts.style.display="none";
+        addpost.style.display="block";
+        Activities.style.display="none";
+        messages.style.display="none";
+        subscribers.style.display="none";
+        })
+
+        acts.addEventListener('click', () =>{
+        posts.style.display="none";
+        addpost.style.display="none";
+        Activities.style.display="flex";
+        messages.style.display="none";
+        subscribers.style.display="none";
+        })
+
+        subs.addEventListener('click', () =>{
+        posts.style.display="none";
+        addpost.style.display="none";
+        Activities.style.display="none";
+        messages.style.display="none";
+        subscribers.style.display="flex";
+        })
+        </script>
+</body>
+</html>
+<script type="text/javascript" src="./js/auth.js"></script>
+
+<script>
+
+
+
+
+    logout.addEventListener('click', (e)=>{
+        window.localStorage.removeItem('auth-token');
+        window.location.href="./index.html"
+    })
+</script>
+<script>
+
+    // reference
+    const postinform =document.querySelector('#postin');
+
+
+    
+    let posti  = document.getElementById("AddPost");
+    var myHeaders;
+    //Adding documents
+   
+
+    //Assign event to button
+
+    posti.addEventListener("click",(e)=>{
+         e.preventDefault;
+         let Title =postinform['title'].value;
+         let Description =postinform['description'].value;
+         CreateBlog();
+         function CreateBlog (){
+ fetch('https://gyssablog.herokuapp.com/blogs',{
+method: "POST",
+headers:{
+    'Content-Type': 'application/json',
+    'auth-token':localStorage.getItem("auth-token") 
+},
+body: JSON.stringify({
+Title:Title,
+Body:Description
+})
+}).then(res =>{
+    return res.json()
+}).then(data => alert(data)
+);
+//reset form
+alert("post added");
+postinform.reset();
+document. location. reload()
+
+} 
+    })
+  
+  //date
+
+  
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+const dateObj = new Date();
+const month = monthNames[dateObj.getMonth()];
+const day = String(dateObj.getDate()).padStart(2, '0');
+const year = dateObj.getFullYear();
+const output = month  + '\n'+ day  + ',' + year;
+var d = new Date();
+let a=d.getHours(); 
+let b=d.getMinutes(); 
+let c=d.getSeconds(); 
+let time=output +" "+ a +":"+ b+":"+ c
+
+  </script>
+
+
+
+<script>
+    const Posts = document.querySelector('#tb3');
+
+var tbody2 = document.getElementById('tb3');
+let del='<div class="icons"><div class="Del"><i class="bx bx-trash"></i></div></div>';
+let edit='<div class="icons"><div class="Edit"><i class="bx bx-edit-alt"></i></div></div>';
+
+                            function AddItemTotable2(doc){
+                                let trow = document.createElement("tr");
+                                let td1 = document.createElement('td');
+                                let td2 = document.createElement('td');
+                                let td3 = document.createElement('td');
+                                let td4 = document.createElement('td');
+                                td4.style.display = "flex";
+                                Edit = document.createElement('td');
+                                Del = document.createElement('td');
+        
+                                trow.setAttribute('data-id', doc._id);
+                                td1.innerHTML=doc.date;
+                                td2.innerHTML= doc.Title;
+                                td3.innerHTML= "GYSSAGARA";
+                                Edit.innerHTML=edit;
+                                Del.innerHTML=del;
+                                console.log(doc.date);
+                                
+                                
+
+                                trow.appendChild(td1);
+                                trow.appendChild(td2);
+                                trow.appendChild(td3);
+                                trow.appendChild(td4);
+                                td4.appendChild(Edit);
+                                td4.appendChild(Del);
+                              
+                              
+                              
+                            
+                              
+                                tbody2.appendChild(trow);
+
+
+                               Del.addEventListener('click', (e) => {
+                                 e.stopPropagation();
+                                let id=(trow.getAttribute('data-id'));
+                                function DeleteBlog (){
+                             fetch('https://gyssablog.herokuapp.com/blogs/'+(id),{
+                             method: "DELETE",
+                             headers:{
+                             'Content-Type': 'application/json',
+                             'auth-token':localStorage.getItem("auth-token") 
+                               },
+                                }).then(res =>{
+                                 return res.json()
+                                }).then(data => alert(data)
+                                  );
+                                      } 
+                                if (confirm('Are you sure to delete this blog?')) {
+                                 DeleteBlog();
+                                 }
+                                   });
+                                 
+                                 Edit.addEventListener('click', (e) => {
+                                 e.stopPropagation();
+                                let id=(trow.getAttribute('data-id'));
+                                fetch('https://gyssablog.herokuapp.com/blogs/'+(id)).then((data)=>{
+                                      return data.json();
+                                    }).then((completedata)=>{
+                                     previousBlg(completedata);
+                                        }).catch((err)=>{
+                                          console.log(err);
+                                                })
+                                    function previousBlg(doc){
+                                document.getElementById("Edit-post").style.display = "block";
+                                document.getElementById("Edit-post").style.position = "relative";
+                                document.getElementById("titles").value = doc.Title;
+                                document.getElementById("descriptions").value = doc.Body;
+                            }
+                                let update  = document.getElementById("UpdatePost");
+                                //Updating
+                                update.addEventListener('click',(e) =>{
+                                    e.preventDefault();
+                                    UpdateBlog();
+                                    function UpdateBlog (){
+                             fetch('https://gyssablog.herokuapp.com/blogs/'+(id),{
+                             method: "PATCH",
+                             headers:{
+                             'Content-Type': 'application/json',
+                             'auth-token':localStorage.getItem("auth-token") 
+                               },
+                               body: JSON.stringify({
+                                Title: document.getElementById("titles").value,
+                                Body: document.getElementById("descriptions").value, 
+                              })
+                                     }).then(res =>{
+                                 return res.json()
+                                }).then(data => alert(data)
+                                  );     
+                                } 
+                                    document.getElementById("Edit-post").style.display = "none";
+                                })
+            
+                                
+                                   });
+                                 }
+
+                            
+                           //function for adding all items to the table
+
+                        
+// getting data
+  fetch('https://gyssablog.herokuapp.com/blogs').then((data)=>{
+
+return data.json();
+}).then((completedata)=>{
+    for(let i=0;i<completedata.length;i++){
+        AddItemTotable2(completedata[i]);
+}
+}).catch((err)=>{
+    console.log(err);
+})
+
+</script>

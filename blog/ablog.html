@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script> -->
+    <title>gyssa's blog</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="#">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo">GYS<span class="blue">S</span><span class="green">A</span></a>
+        <ul class="navbar1">
+            <li><a href="../index.html#home" >Home</a></li>
+            <li><a href="../index.html#about">About me</a></li>
+            <li><a href="blog/index.html"><span>Blog</span></a></li>
+            <li><a href="#footer">Contact me</a></li>
+            <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+        </ul>
+    </nav>
+    <section id="blog">
+    <header>
+        <ul class="navbar">
+            <li><a href="#home" >Scientific facts</a></li>
+            <li><a href="#about">Amazing tricks</a></li>
+            <li><a href="blog/index.html">Did you know</a></li>
+            <li><a href="#footer">Vast Ideas</a></li>
+            <li> <input type="text" name="title" placeholder="Search here" class="inpt"><input type="submit" name="search" value="Search" class="sbtn"> </li>
+        </ul>
+    </header>
+    <div class="search">
+   </div>
+    <div class="Singleblog-container" id="blog-container">
+
+    </div>
+    </section>
+    <section class="footer" id="footer">
+        <div class="subcribe-area">
+           <h3>&nbsp;&nbsp;&nbsp; GYS<span class="blue">S</span><span class="green">A</span></h3>
+           <br>
+           <p>&nbsp;&nbsp;&nbsp; Let's connect through Big Ideas<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;and share thoughts.</p>
+           <br>
+            <h3>&nbsp;&nbsp;&nbsp;Subscribe To Newsletter</h3>
+            &nbsp;&nbsp;&nbsp;<input type="email" name="email" id="subscribing" placeholder="Enter your email" class="text-A"><input type="submit" name="subscribe" id="subscri" value="Subscribe" class="btn">
+        </div>
+           <div class="company">
+               <h3>SEND AN IDEA</h3>
+               <input type="email" id="email" name="email" placeholder="Email" style="width: 250px;padding:3px;border: 1px solid rgb(5, 5, 5);border-radius: 4px;">
+       <br><textarea id="subject" name="subject" placeholder="Write your message.." style="height:100px;width: 250px;padding:8px;border: 1px solid #ccc;border-radius: 4px;"></textarea><br>
+        <input type="submit" value="Send" id="submit" name="submit" class="btn">
+    </fieldset>
+           </div>
+           
+           <div class="contact">
+               <h3>CONTACT</h3>
+               <p>Kigali City,Rwanda<br>
+               +250785364200<br>
+           gyssatechnologies@gmail.com<br>
+          <a href="https://twitter.com/gyssa-prince"> <img src="img/tw2.png" width="20px"></a>&nbsp;<a href=""><img src="img/lin2.png" width="20px"></a>&nbsp;<a href="https://www.instagram.com/prince_gyssa"><img src="img/ins2.png" width="20px"></a></p>
+       </section>
+           <h4 align="center" style="background-color:#ffff;">&#169;GYSSA TECHONOLOGIES All Right Reserved</h4>
+           <!-- <script src="./script.js"></script> -->
+            
+        </body>
+</html>
+<script type="module">
+  
+  </script>
+  <script>
+    let id =(location.hash).slice(1);
+    var Allblogs= document.getElementById('blog-container')
+    let comments =document.createElement('div');
+
+    function RenderAblog(doc){
+        let blogbox =document.createElement('div');
+        let blogimg =document.createElement('div');
+        let blogtxt =document.createElement('div');
+        let Goback = document.createElement('button');
+        let blogbottom =document.createElement('div');
+        let commentArea =document.createElement('div');
+       
+
+        commentArea.setAttribute('class','comment');
+        comments.setAttribute('class','comments');
+        Goback.setAttribute('class','go-back')
+        blogbox.setAttribute('class','Singleblog-box');
+        blogbottom.setAttribute('class','blogBottom-box');
+
+        let like = document.createElement('a');
+        like.setAttribute('class','like')
+        let commentbtn =document.createElement('button'); 
+        commentbtn.setAttribute('class','btn1');
+
+        let comment = document.createElement('textarea');
+        let backicon = document.createElement('img');
+        backicon.setAttribute('class', 'back');
+        let img= document.createElement('img');
+        img.setAttribute('class','blog-img')
+        let date= document.createElement('span');
+        let blgtitle = document.createElement('a');
+        blgtitle.setAttribute('class','blog-title1');
+        let p = document.createElement('p');
+        
+
+        //
+
+        Goback.setAttribute('class', 'go-back');
+         
+        backicon.src="img/back.png";
+        img.src ="img/tour.webp";
+        date.textContent = doc.date+' /GYSSAGARA';
+        blgtitle.textContent =doc.Title; 
+        p.textContent = doc.Body;
+        like.innerHTML='❤'+"  ";
+        commentbtn.innerHTML='Comment';
+        comment.placeholder = "Comment here..";
+
+        blogimg.appendChild(img);
+        blogtxt.appendChild(date);
+        blogtxt.appendChild(p);
+        blogtxt.appendChild(blogbottom);
+        blogbottom.appendChild(commentArea);
+        blogbottom.appendChild(comments);
+        Allblogs.appendChild(Goback);
+        Allblogs.appendChild(blgtitle);
+        Goback.appendChild(backicon);
+        blogbox.appendChild(blogimg);
+        blogbox.appendChild(blogtxt);
+        Allblogs.appendChild(blogbox);
+        
+        commentArea.appendChild(like);
+        commentArea.appendChild(comment);
+        commentArea.appendChild(commentbtn);
+
+        commentbtn.addEventListener('click',(e)=>{
+            e.preventDefault();
+            commentBlog(comment.value);
+            comment.value=''; 
+            window.location.reload(true);
+        },
+        )
+     
+
+     
+
+    Goback.addEventListener('click',(e) => {
+        window.location.href="index.html";
+    })
+    }
+
+            //render comments
+            function renderComments(blogcomments){
+
+            let pcomment = document.createElement('p');
+            pcomment.textContent=blogcomments;  
+
+            comments.appendChild(pcomment);
+            
+        
+        }
+        
+    
+//fetch blog
+
+  fetch('https://gyssablog.herokuapp.com/blogs/'+(id)).then((data)=>{
+
+return data.json();
+}).then((completedata)=>{
+    RenderAblog(completedata);
+}).catch((err)=>{
+    console.log(err);
+})
+
+fetch('https://gyssablog.herokuapp.com/comment/'+(id)).then((data)=>{
+
+return data.json();
+}).then((comments)=>{
+    for(let i=0;i<3;i++){
+    renderComments(comments[i].Comment);
+    }
+}).catch((err)=>{
+    console.log(err);
+})
+
+
+
+async function commentBlog (commentTxt){
+    await fetch('https://gyssablog.herokuapp.com/comment',{
+method: "POST",
+headers:{
+    'Content-Type': 'application/json',
+},
+body: JSON.stringify({
+Blogid:id,
+Comment:commentTxt
+})
+}).then(res =>{
+    return res.json()
+}).then(data => alert(data)
+);
+} 
+function reloadScreen(){
+document. location. reload()
+}
+  </script>
