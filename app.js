@@ -12,7 +12,6 @@ import loginRoute from './routes/auth.js';
 import messageRoute from './routes/messages.js';
 import subcribeRoute from './routes/subcribe.js';
 import commentRoute from './routes/comments.js';
-import uploadRoute from './routes/upload.js';
 
 let gfs;
 //ROUTES
