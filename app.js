@@ -3,10 +3,12 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import Grid from 'gridfs-stream';
+import cors from 'cors';
 
 dotenv.config();
 const app =express();
 app.use(bodyParser.json());
+app.use(cors());
 import blogsRoute from './routes/blogs.js';
 import loginRoute from './routes/auth.js';
 import messageRoute from './routes/messages.js';
