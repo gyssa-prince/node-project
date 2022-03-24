@@ -125,11 +125,12 @@ router.post('/',verify, upload.single("file"), async(req,res) =>{
     try {
      console.log("req.body: ",req.body);
      if (req.file === undefined) return res.send("you must select a file.");
-    const imgUrl = `http://localhost:3000/file/${req.file.filename}`;
+    const imgUrl = `https://gyssablog.herokuapp.com/file/${req.file.filename}`;
 
      const newBlog = new Blog({
          Title: req.body.Title,
          Body: req.body.Body,
+         Dates:req.body.Date
          Picture: imgUrl
      });
      
