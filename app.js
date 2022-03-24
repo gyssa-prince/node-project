@@ -63,5 +63,5 @@ app.delete("/file/:filename", async (req, res) => {
 });
 
 //To listen the server
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 export default app;
