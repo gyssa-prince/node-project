@@ -30,7 +30,8 @@ if(error) return res.status(400).send(error.details[0].message);
      console.log("req.body: ",req.body);
  const AddComment = new Comment({
      Blogid: req.body.Blogid,
-     Comment: req.body.Comment
+     Comment: req.body.Comment,
+     date: req.body.date
  })
  await Comment.create(AddComment);
  res.sendStatus(201);
