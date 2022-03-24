@@ -14,7 +14,7 @@ const BlogsSchema = mongoose.Schema({
    },
     date: {
         type: Date,
-        default: Date.now
+        required: true
     }
 });
 export default mongoose.model('Blogs',BlogsSchema);
