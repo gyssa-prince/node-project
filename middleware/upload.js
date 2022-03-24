@@ -22,4 +22,4 @@ const storage = new GridFsStorage({
 });
 
 const upload= multer({ storage });
-export default upload
+export default upload;
