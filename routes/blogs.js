@@ -64,7 +64,8 @@ router.post('/',verify, async(req,res) =>{
 
      const newBlog = new Blog({
          Title: req.body.Title,
-         Body: req.body.Body
+         Body: req.body.Body,
+         date: req.body.Date
      });
      
      await Blog.create(newBlog);
