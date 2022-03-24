@@ -53,7 +53,7 @@ app.get("/file/:filename", async (req, res) => {
     }
 });
 
-app.delete("/file/:filename", async (req, res) => {
+app.delete("/file/:filename",verify, async (req, res) => {
     try {
         await gfs.files.deleteOne({ filename: req.params.filename });
         res.send("success");
