@@ -13,8 +13,8 @@ const BlogsSchema = mongoose.Schema({
         default:'GYSSAGARA Prince'
    },
     date: {
-        type: Date,
-        required: true
+   type: String,
+         required: true
     }
 });
 export default mongoose.model('Blogs',BlogsSchema);
