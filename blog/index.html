@@ -44,20 +44,22 @@
     </section>
     <section class="footer" id="footer">
         <div class="subcribe-area">
-           <h3>&nbsp;&nbsp;&nbsp; GYS<span class="blue">S</span><span class="green">A</span></h3>
+           <a href="#" class="logo">GYS<span class="blue">S</span><span class="green">A</span></a>
            <br>
-           <p>&nbsp;&nbsp;&nbsp; Let's connect through Big Ideas<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;and share thoughts.</p>
+           <p>Our approach is to digitalize<br>
+           and introduce new technologies.</p>
            <br>
-            <h3>&nbsp;&nbsp;&nbsp;Subscribe To Newsletter</h3>
-            &nbsp;&nbsp;&nbsp;<input type="email" name="email" id="subscribing" placeholder="Enter your email" class="text-A" required><input type="submit" name="subscribe" id="subscri" value="Subscribe" class="btn">
-        </div>
+            <h3>Subscribe To Newsletter</h3>
+            <form id="subscribeForm"> <input type="email" name="email" id="subscribing" placeholder="Enter your email" class="text-A" required><input type="submit" name="subscribe" id="subscri" value="Subscribe" class="btn">
+            </form></div>
            <div class="company">
-               <h3>SEND AN IDEA</h3>
+               <h3>SEND A MESSAGE</h3>
+               <form id="messageForm">
                <input type="email" id="email" name="email" placeholder="Email" style="width: 250px;padding:3px;border: 1px solid rgb(5, 5, 5);border-radius: 4px;" required>
-       <br><textarea id="subject" name="subject" placeholder="Write your message.." style="height:100px;width: 250px;padding:8px;border: 1px solid #ccc;border-radius: 4px;" required></textarea><br>
-        <input type="submit" value="Send" id="submit" name="submit" class="btn">
-    </fieldset>
+              <br><textarea id="subject" name="subject" placeholder="Write your message.." style="height:100px;width: 250px;padding:8px;border: 1px solid #ccc;border-radius: 4px;" required></textarea><br>
+               <input type="submit" value="Send" id="submit" name="submit" class="btn">
+           </form>
+           </fieldset>
            </div>
            
            <div class="contact">
@@ -68,102 +70,94 @@
           <a href="https://twitter.com/gyssa-prince"> <img src="img/tw2.png" width="20px"></a>&nbsp;<a href=""><img src="img/lin2.png" width="20px"></a>&nbsp;<a href="https://www.instagram.com/prince_gyssa"><img src="img/ins2.png" width="20px"></a></p>
        </section>
            <h4 align="center" style="background-color:#ffff;">&#169;GYSSA TECHONOLOGIES All Right Reserved</h4>
-           <!-- <script src="../firebase.js"></script> -->
+           <script>
+               
+               let Email =document.getElementById("email");
+               let Subs = document.getElementById("subscribing")
+               let Message =document.getElementById("subject");
+       
+               let Subscribe =document.getElementById("subscribing");
+               
+               let Send  = document.getElementById("submit");
+               let Subsc  = document.getElementById("subscri");
+       
+               //Adding documents
+       
+               async function Sendmessage (){
+            const email = Email.value;
+            const message = Message.value;
+            const MessageForm = document.getElementById("messageForm");
+       await fetch('https://gyssablog.herokuapp.com/message',{
+       method: "POST",
+       headers:{
+           'Content-Type': 'application/json'
+       },
+       body: JSON.stringify({
+       Email:email,
+       Message:message
+       })
+       }).then(response => response.text())
+       .then(alert ("Message sent"))
+       MessageForm.reset();
+       }
+       Send.addEventListener("click",Sendmessage)
+       
+       async function subscribe (){
+            const email = Subs.value;
+            const SubscribeForm = document.getElementById("subscribeForm");
+       await fetch('https://gyssablog.herokuapp.com/subcribe',{
+       method: "POST",
+       headers:{
+           'Content-Type': 'application/json'
+       },
+       body: JSON.stringify({
+       Email:email
+       })
+       }).then(response => response.text())
+       .then(alert ("Thank you for subscribing"))
+       SubscribeForm.reset();
+       }
+       Subsc.addEventListener("click",subscribe)
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       /*
+               async function Subscrib(){
+                   var ref = collection(db,"Subscribers");
+       
+                   const docRef = await addDoc(
+                       ref, {
+                           Email: Subs.value,
+                           Date_time: time,
+                       }
+                   )
+                   .then(() => {
+                       alert("Thanks, you will be notified for the latest");
+                   }).catch((error)=> {
+                       alert ("Subscription failed"+error);
+                   });
+               }
+       
+       
+       */
+               //Assign event to button
+       
+               Subsc.addEventListener("click",Subscrib)
+             
+         
+       
+             </script>
            <script src="js/blog.js"></script>
-           <!-- <script src="main.js"></script> -->
-        </body>
-</html>
-<script type="module">
-  /*  // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyAooC6GZdOow4Ua5laOURlRDzUnpQb8Ih8",
-      authDomain: "personal-web-6f353.firebaseapp.com",
-      projectId: "personal-web-6f353",
-      storageBucket: "personal-web-6f353.appspot.com",
-      messagingSenderId: "137010214646",
-      appId: "1:137010214646:web:295d000efc7550352aded7"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    import {
-        getFirestore, doc,getDoc,setDoc, collection, addDoc, serverTimestamp, updateDoc, deleteDoc, deleteField
-    } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
-
-    const db= getFirestore();
-
-    // reference
-
-    let Email =document.getElementById("email");
-    let Subs = document.getElementById("subscribing")
-    let Message =document.getElementById("subject");
-
-    let Subscribe =document.getElementById("subscribing");
-    
-    let Send  = document.getElementById("submit");
-    let Subsc  = document.getElementById("subscri");
-
-    //Adding documents
-
-    async function AddDocument_AutoID(){
-        var ref = collection(db,"Messages");
-
-        const docRef = await addDoc(
-            ref, {
-                Email: Email.value,
-                Message: Message.value,
-                Date_time: time,
-            }
-        )
-        .then(() => {
-            alert("Message sent sucessfully");
-        }).catch((error)=> {
-            alert ("Message not sent !!!"+error);
-        });
-    }
-
-    async function Subscrib(){
-        var ref = collection(db,"Subscribers");
-
-        const docRef = await addDoc(
-            ref, {
-                Email: Subs.value,
-                Date_time: time,
-            }
-        )
-        .then(() => {
-            alert("Thanks, you will be notified for the latest");
-        }).catch((error)=> {
-            alert ("Subscription failed"+error);
-        });
-    }
-
-
-
-    //Assign event to button
-
-    Send.addEventListener("click",AddDocument_AutoID)
-    Subsc.addEventListener("click",Subscrib)
-*/  
-  //date
-
-  
-const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
-const dateObj = new Date();
-const month = monthNames[dateObj.getMonth()];
-const day = String(dateObj.getDate()).padStart(2, '0');
-const year = dateObj.getFullYear();
-const output = month  + '\n'+ day  + ',' + year;
-var d = new Date(); // for now
-let a=d.getHours(); // => 9
-let b=d.getMinutes(); // =>  30
-let c=d.getSeconds(); // => 51
-let time=output +" "+ a +":"+ b+":"+ c
-
-  </script>
+           <script src="main.js"></script>
+       
+       </body>
+       </html>
