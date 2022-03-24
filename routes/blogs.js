@@ -71,7 +71,7 @@ router.post('/',verify, upload.single("file"), async(req,res) =>{
      const newBlog = new Blog({
          Title: req.body.Title,
          Body: req.body.Body,
-         Picture: imgUrl
+         Picture: imgUrl,
      });
      
      await Blog.create(newBlog);
