@@ -32,6 +32,7 @@ if(error) return res.status(400).send(error.details[0].message);
  const AddMessage = new Message({
      Email: req.body.Email,
      Message: req.body.Message,
+     date: req.body.Date
  })
  await Message.create(AddMessage);
  res.send("Message sent");
