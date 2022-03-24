@@ -8,6 +8,10 @@ const BlogsSchema = mongoose.Schema({
          type: String,
          required: true
     },
+    Picture: {
+        type: String,
+        required: true
+   },
     Author: {
         type: String,
         default:'GYSSAGARA Prince'
