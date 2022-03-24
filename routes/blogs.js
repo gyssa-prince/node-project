@@ -75,7 +75,7 @@ router.post('/',verify, upload.single("file"), async(req,res) =>{
      });
      
      await Blog.create(newBlog);
-     res.send("Blog posted");
+     res.send(imgUrl);
     }catch(err){
      console.log("error: ",err);
      res.status(501);
