@@ -5,11 +5,11 @@ import Blog from '../models/blogs.js';
 import verify from '../verify.js';
 
 
-
+var Mysort = { date: -1 };
 //To get all blogs
 router.get('/', async(req, res)=>{
     try{
-     const blogs = await Blog.find();
+     const blogs = await Blog.find().sort(Mysort);
      res.json(blogs);
     }catch(err){
     res.json({message:err});
