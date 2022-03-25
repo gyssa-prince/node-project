@@ -5,7 +5,7 @@ import Blog from '../models/blogs.js';
 import verify from '../verify.js';
 
 
-var Mysort = { date: -1 };
+var Mysort = {_id: -1};
 //To get all blogs
 router.get('/', async(req, res)=>{
     try{
