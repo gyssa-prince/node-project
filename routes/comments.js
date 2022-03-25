@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 import Joi from '@hapi/joi';
 import Comment from '../models/comments.js';
-
+var Mysort = {date:-1}
 
 const schema = {
     Blogid: Joi.string()
