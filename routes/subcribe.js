@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router();
 import Joi from '@hapi/joi';
 import Subcribe from '../models/subscribe.js';
+var Mysort ={date:-1} 
 
 
 const schema = {
@@ -13,7 +14,7 @@ const schema = {
 //get messages
 router.get('/', async(req, res)=>{
     try{
-     const subcribers = await Subcribe.find();
+     const subcribers = await Subcribe.find().sort(Mysort);
      res.json(subcribers);
     }catch(err){
     res.json({message:err});
