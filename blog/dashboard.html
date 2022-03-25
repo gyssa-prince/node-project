@@ -224,6 +224,22 @@
     </div>                    
     </main>
     <script>
+	     //date
+
+  
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+const dateObj = new Date();
+const month = monthNames[dateObj.getMonth()];
+const day = String(dateObj.getDate()).padStart(2, '0');
+const year = dateObj.getFullYear();
+const output = month  + '\n'+ day  + ',' + year;
+var d = new Date();
+let a=d.getHours(); 
+let b=d.getMinutes(); 
+let c=d.getSeconds(); 
+let time=output +" "+ a +":"+ b+":"+ c
+
         const msg = document.getElementsByClassName('msg')[0]
         const messages =document.getElementsByClassName('table-data')[0]
         const post = document.getElementsByClassName('post')[0]
@@ -318,7 +334,7 @@ headers:{
 body: JSON.stringify({
 Title:Title,
 Body:Description,
-Date:'time'
+Date:time
 })
 }).then(res =>{
     return res.json()
@@ -332,22 +348,7 @@ document. location. reload()
 } 
     })
   
-  //date
-
-  
-const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
-const dateObj = new Date();
-const month = monthNames[dateObj.getMonth()];
-const day = String(dateObj.getDate()).padStart(2, '0');
-const year = dateObj.getFullYear();
-const output = month  + '\n'+ day  + ',' + year;
-var d = new Date();
-let a=d.getHours(); 
-let b=d.getMinutes(); 
-let c=d.getSeconds(); 
-let time=output +" "+ a +":"+ b+":"+ c
-
+ 
   </script>
 
 
