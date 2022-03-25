@@ -318,7 +318,7 @@ headers:{
 body: JSON.stringify({
 Title:Title,
 Body:Description,
-Date:time;	
+Date:'time'
 })
 }).then(res =>{
     return res.json()
@@ -472,5 +472,5 @@ return data.json();
 }).catch((err)=>{
     console.log(err);
 })
-
+console.log(time)
 </script>
