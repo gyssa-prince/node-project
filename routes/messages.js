@@ -4,7 +4,7 @@ import Joi from '@hapi/joi';
 import Message from '../models/messages.js';
 import verify from '../verify.js';
 
-
+var Mysort = { date:-1}
 const schema = {
     Email: Joi.string()
     .required()
@@ -16,7 +16,7 @@ const schema = {
 //get messages
 router.get('/',verify, async(req, res)=>{
     try{
-     const messages = await Message.find();
+     const messages = await Message.find().sort(Mysort);
      res.json(messages);
     }catch(err){
     res.json({message:err});
