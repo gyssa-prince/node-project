@@ -27,7 +27,7 @@ let img= document.createElement('img');
    
 
 
-     
+      img.src = doc.Picture; 
     date.textContent = doc.date+' /GYSSAGARA';
     blgtitle.textContent = doc.Title; 
     p.textContent = doc.Body.substring(0,100)+'...';
