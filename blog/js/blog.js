@@ -45,7 +45,7 @@ let img= document.createElement('img');
 
     Readmore.addEventListener('click',(e) => {
       let Postid = (Readmore.getAttribute('id'));
-      window.location.href="ablog.html#"+(Postid)
+      window.location.href="ablog.html#"+(Postid);
     })
 
 }
