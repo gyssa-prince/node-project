@@ -15,6 +15,10 @@ const BlogsSchema = mongoose.Schema({
     Author: {
         type: String,
         default:'GYSSAGARA Prince'
+   },
+        Picture: {
+        type: String,
+        default:'img/tour.webp'
    }
 });
 export default mongoose.model('Blogs',BlogsSchema);
