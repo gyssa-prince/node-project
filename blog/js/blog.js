@@ -1,5 +1,8 @@
 var Posts = document.getElementById('#blog-container')
 var Allblogs= document.getElementById('blog-container')
+ var Loading=false
+
+  Allblogs.innerHTML="Loading....";
 
 
 function displayblogs(doc){
@@ -65,7 +68,7 @@ db.collection('Posts').get().then(snapshot => {
 
 return data.json();
 }).then((completedata)=>{
-
+  Allblogs.innerHTML="";
   for(i=0;i<5;i++){
     displayblogs(completedata[i]);
   }

@@ -123,25 +123,13 @@
         blogtxt.appendChild(date);
         blogtxt.appendChild(p);
         blogtxt.appendChild(blogbottom);
-        blogbottom.appendChild(commentArea);
-        blogbottom.appendChild(comments);
         Allblogs.appendChild(Goback);
         Allblogs.appendChild(blgtitle);
         Goback.appendChild(backicon);
         blogbox.appendChild(blogimg);
         blogbox.appendChild(blogtxt);
         Allblogs.appendChild(blogbox);
-        
-        commentArea.appendChild(like);
-        commentArea.appendChild(comment);
-        commentArea.appendChild(commentbtn);
 
-        commentbtn.addEventListener('click',(e)=>{
-            e.preventDefault();
-            commentBlog(comment.value);
-            comment.value=''; 
-        },
-        )
      
 
      
