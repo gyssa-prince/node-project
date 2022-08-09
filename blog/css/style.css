@@ -59,6 +59,9 @@ header {
     position: relative;
     display: flex;
   }
+  .footer{
+    padding-left: 20px;
+  }
 .navbar a {
     font-size: 0.7rem;
     padding: 2px 90px;
