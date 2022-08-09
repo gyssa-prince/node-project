@@ -287,4 +287,5 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, auto));
   gap: 1rem;
   background:#A6A6A6;
+  padding-left: 8px;
 }}
